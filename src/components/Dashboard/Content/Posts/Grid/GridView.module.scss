@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  grid-template-rows: repeat(3, 200px);
+  gap: 10px;
+}
+
+.postContainer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.title {
+  align-self: flex-start;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 70%;
+}

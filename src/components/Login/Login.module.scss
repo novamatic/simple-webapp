@@ -1,0 +1,48 @@
+$box-background-color: #e4e3e3;
+
+.loginTitle {
+  margin-top: 20vh;
+}
+
+.loginContainer {
+  background-color: $box-background-color;
+  border-radius: 6px;
+  margin: 0 auto;
+  height: 30vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.loginForm {
+  width: 80%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginInput {
+  height: 35px;
+  padding: 10px;
+  border: solid 1px #bbb;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginButton {
+  width: 50%;
+
+  &:active {
+    transform: translateY(3px);
+  }
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+}

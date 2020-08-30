@@ -1,0 +1,24 @@
+.container {
+  margin: auto;
+  width: 30vw;
+  height: 40vh;
+  padding: 20px;
+  background-color: #ddd;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.buttonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.error {
+  color: red;
+  margin-top: 0.5rem;
+}

@@ -1,0 +1,11 @@
+.dropdown {
+  width: 150px;
+  display: flex;
+  justify-content: space-between !important;
+}
+
+.dropdownItem {
+  &:hover {
+    background-color: rgb(223, 223, 223);
+  }
+}

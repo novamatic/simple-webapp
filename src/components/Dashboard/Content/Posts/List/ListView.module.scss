@@ -1,0 +1,37 @@
+.post {
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.visiblePart {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+}
+
+.infoPart {
+  display: flex;
+  flex-direction: row;
+}
+
+.titleContainer {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subtitle {
+  &:hover {
+    cursor: pointer;
+    border-bottom: solid 1px black;
+  }
+}
