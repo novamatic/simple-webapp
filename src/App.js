@@ -6,12 +6,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Dashboard from './components/Dashboard/Dashboard';
 
 import { AuthContext } from './context/auth';
+import { CommentsContext } from './context/comments';
 import PrivateRoute from './PrivateRoute';
 import SinglePost from './components/Dashboard/Content/Posts/SinglePost/SinglePost';
 
 function App() {
   const token = localStorage.getItem('token');
   const [authToken, setAuthToken] = useState(token);
+  const [comments, setComments] = useState([]);
 
   const setToken = (data) => {
     localStorage.setItem('token', data);
@@ -20,11 +22,13 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ authToken, setAuthToken: setToken }}>
-      <Router>
-        <Route exact path="/" component={Login} />
-        <PrivateRoute path="/dashboard/:page" component={Dashboard} />
-        <PrivateRoute path="/post/:id" component={SinglePost} />
-      </Router>
+      <CommentsContext.Provider value={{ comments, setComments }}>
+        <Router>
+          <Route exact path="/" component={Login} />
+          <PrivateRoute path="/dashboard/:page" component={Dashboard} />
+          <PrivateRoute path="/post/:id" component={SinglePost} />
+        </Router>
+      </CommentsContext.Provider>
     </AuthContext.Provider>
   );
 }

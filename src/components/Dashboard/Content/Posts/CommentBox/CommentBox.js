@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import styles from './CommentBox.module.scss';
 
 import postsRestService from '../postsRestService';
+import { useComments } from '../../../../../context/comments';
 
 const CommentBox = ({ id, closeAction }) => {
+  const { comments, setComments } = useComments();
+
   const [error, setError] = useState(false);
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
@@ -20,12 +23,14 @@ const CommentBox = ({ id, closeAction }) => {
 
   const handleSubmit = () => {
     if (accept && name && comment) {
-      setError(false);
-      postsRestService.postComment({
+      const newComment = {
         id,
         name,
         comment,
-      });
+      };
+      setComments([...comments, newComment]);
+      setError(false);
+      postsRestService.postComment(newComment);
       closeAction(false);
     } else {
       setError(true);

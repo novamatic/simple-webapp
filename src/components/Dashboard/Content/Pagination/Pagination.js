@@ -9,8 +9,6 @@ const Pagination = () => {
   const prevPage = Number(page) - 1;
   const nextPage = Number(page) + 1;
 
-  console.log(page);
-
   const generateLink = (pageId) => `/dashboard/${pageId}`;
 
   const mediumPagePicked = (
